@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ninh Văn Tuấn Đạt</title>
+</head>
+<style>
+    table
+    {
+        width: 900px;
+    }
+    td,select
+    {
+        width: 120px;
+
+    }
+td
+{
+    padding-left: 45px;
+}
+
+</style>
+<body>
+<table>
+    <tr>
+         <th><b>Amount</b></th>
+        <th> <b>From Currency</b></th>
+        <th> <b>To Currency</b></th>
+    </tr>
+    <tr>
+        <td><input type="text" name="" id="dauvao"></td>
+        <td>
+            <select id="select1" >
+                <option value="vnđ">Vietnam</option>
+                <option value="usd">USD</option>
+            </select></td>
+        <td>
+            <select id="select2" >
+                <option value="usd">USD</option>
+                <option value="vnđ">Vietnam</option>
+            </select>
+        </td>
+        <td>
+          <button onclick="Kich()" style="background: deepskyblue; color: white">Convert</button>
+        </td>
+    </tr>
+</table>
+<h5 id="rs"></h5>
+<h5 id="r"></h5>
+<script>
+    function Kich()
+    {
+        let nhapvao = (document.getElementById('dauvao').value)
+        let select1 = (document.getElementById('select1').value)
+        let select2 = (document.getElementById('select2').value)
+
+        if(select1==select2)
+        {
+            document.getElementById('rs').innerHTML ='Result:'+nhapvao+select1
+        }
+        if( select1 =='vnđ' && select2 =='usd')
+        {
+            document.getElementById('rs').innerHTML ='Result:'+nhapvao/2400
+
+        }
+        if (select1 == 'usd' && select2 == 'vnđ')
+        {
+            document.getElementById('rs').innerHTML ='Result:'+nhapvao*2400
+        }
+    }
+
+
+
+
+</script>
+
+</body>
+</html>
